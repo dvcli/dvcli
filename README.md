@@ -5,7 +5,7 @@ A CLI
 ### For Windows users
 
 Add .dvclirc config file to your `%systemdrive%%homepath%` directory
-<i>eg: C:\Users\dvsource\.dvclirc</i>
+<i>eg: C:\Users\dvsource\\.dvclirc</i>
 
 ### clone a github repo
 
