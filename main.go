@@ -12,15 +12,17 @@ import (
 )
 
 func main() {
-	gitHubClonePtr := flag.String("ghc", "gh", "GitHub Repo")
+	gitHubHost := flag.String("gc", "gh", "host")
 	// datePtr := flag.String("d", "NH", "Date")
 	// timePtr := flag.String("t", "4H", "Time duration")
 
 	flag.Parse()
 
-	doGitClone("gh", *gitHubClonePtr)
+	for i := range flag.Args() {
+		doGitClone(*gitHubHost, flag.Arg(i))
+	}
 
-	fmt.Println("Done.")
+	fmt.Println("Done Done.")
 }
 
 func doGitClone(host string, repo string) {
@@ -32,6 +34,7 @@ func doGitClone(host string, repo string) {
 
 	folderPath := filepath.Join(gitHostDir, gitPath)
 	gitClone(gitURI, folderPath)
+	fmt.Println(repo, "Done.")
 }
 
 func gitClone(gitURI string, folderPath string) {
